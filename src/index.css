@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --bg: #060b14;
+  --bg-card: rgba(13, 20, 36, 0.85);
+  --bg-glow: rgba(0, 212, 168, 0.04);
+  --text: #f1f5f9;
+  --text2: #94a3b8;
+  --text3: #64748b;
+  --teal: #00d4a8;
+  --orange: #f59e0b;
+  --gold: #fbbf24;
+  --wa: #25D366;
+  --wa-hover: #1da851;
+  --border: rgba(255, 255, 255, 0.07);
+  --border-a: rgba(0, 212, 168, 0.18);
+  --font: 'Outfit', system-ui, -apple-system, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  -webkit-user-select: none;
+  user-select: none;
+  background-image:
+    radial-gradient(ellipse at 20% 0%, rgba(0, 212, 168, 0.05), transparent 50%),
+    radial-gradient(ellipse at 80% 100%, rgba(245, 158, 11, 0.04), transparent 50%);
+}
+
+a { text-decoration: none; color: inherit; }
+button { font-family: var(--font); border: none; background: none; cursor: pointer; }

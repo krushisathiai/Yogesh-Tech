@@ -1,0 +1,117 @@
+/* Course Card Base */
+.course-card {
+  background: var(--bg-card);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.course-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Theme variations matching the logo */
+.course-card.theme-teal::before {
+  background: linear-gradient(90deg, transparent, var(--accent-teal), transparent);
+}
+.course-card.theme-teal:hover {
+  border-color: var(--card-border-hover-teal);
+  box-shadow: 0 10px 30px -10px rgba(0, 180, 147, 0.2);
+}
+.course-card.theme-teal .icon-wrapper {
+  background: rgba(0, 180, 147, 0.1);
+  color: var(--accent-teal);
+  border: 1px solid rgba(0, 180, 147, 0.2);
+}
+
+.course-card.theme-orange::before {
+  background: linear-gradient(90deg, transparent, var(--accent-orange), transparent);
+}
+.course-card.theme-orange:hover {
+  border-color: var(--card-border-hover-orange);
+  box-shadow: 0 10px 30px -10px rgba(245, 158, 11, 0.2);
+}
+.course-card.theme-orange .icon-wrapper {
+  background: rgba(245, 158, 11, 0.1);
+  color: var(--accent-orange);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+}
+
+.course-card:hover::before {
+  opacity: 1;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.icon-wrapper {
+  padding: 0.75rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.course-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.course-card h2 {
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.card-description {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+  flex: 1;
+}
+
+/* WhatsApp Button */
+.whatsapp-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  background-color: var(--whatsapp-color);
+  color: white;
+  padding: 0.875rem 1.5rem;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.2);
+}
+
+.whatsapp-btn:hover {
+  background-color: var(--whatsapp-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+}
