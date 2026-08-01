@@ -4,6 +4,7 @@ import './App.css';
 import logoImg from './assets/logo.png';
 import HomePage from './pages/HomePage';
 import TelegramPage from './pages/TelegramPage';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -18,6 +19,9 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/telegram" element={<TelegramPage />} />
       </Routes>
+      
+      {/* ═══ FOOTER ═══ */}
+      <Footer />
     </div>
   );
 }
