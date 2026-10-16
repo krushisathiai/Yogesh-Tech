@@ -461,7 +461,7 @@ const HomePage = () => {
             <div className="smc-toolbar" style={{ marginTop: '1.25rem' }}>
               <span className="smc-count-text">🎯 ICT &amp; CRT: 6 Advanced Modules</span>
               <button type="button" onClick={toggleIctAll} className="smc-toggle-all-btn">
-                {isIctAllOpen ? 'Collapse All Topics' : 'Expand All Topics'}
+                {isIctAllOpen ? 'Collapse All Topics' : 'Check ICT, CRT & Alchemist All Topics'}
               </button>
             </div>
           )}
