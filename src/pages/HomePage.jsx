@@ -294,15 +294,15 @@ const HomePage = () => {
 
       {/* ── BATCH INFO ── */}
       <div className="batch-strip">
-        <div className="batch-chip"><span className="chip-icon">📅</span><div><small>नवीन Batch सुरू</small><strong>5 Nov 2026</strong></div></div>
-        <div className="batch-chip"><span className="chip-icon">⏰</span><div><small>वेळ (Batch Time)</small><strong>सकाळी 9:00 – 11:00</strong></div></div>
-        <div className="batch-chip"><span className="chip-icon">💻</span><div><small>Mode</small><strong>Live Online Sessions</strong></div></div>
+        <div className="batch-chip"><span className="chip-icon">📅</span><div><small>Batch Start Date</small><strong>5 Nov 2026</strong></div></div>
+        <div className="batch-chip"><span className="chip-icon">⏰</span><div><small>Batch Timing</small><strong>Morning 9:00 – 11:00 AM</strong></div></div>
+        <div className="batch-chip"><span className="chip-icon">💻</span><div><small>Session Mode</small><strong>Live Online Sessions</strong></div></div>
       </div>
 
       {/* ── CTA 1 ── */}
       <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="wa-btn wa-btn-big">
         <WhatsAppIcon size={26} />
-        <span>Join – WhatsApp</span>
+        <span>Join on WhatsApp</span>
       </a>
 
       {/* ── WHAT YOU LEARN ── */}
@@ -366,10 +366,10 @@ const HomePage = () => {
 
           <div className="smc-toolbar">
             <span className="smc-count-text">
-              {activeTab === 'smc' ? '🧠 SMC: 6 प्रमुख Modules' : '🎯 ICT & CRT: 6 प्रगत Modules'}
+              {activeTab === 'smc' ? '🧠 SMC: 6 Core Modules' : '🎯 ICT & CRT: 6 Advanced Modules'}
             </span>
             <button type="button" onClick={toggleCurrentAll} className="smc-toggle-all-btn">
-              {isCurrentAllOpen ? 'सर्व बंद करा (Collapse All)' : 'सर्व उघडा (Expand All)'}
+              {isCurrentAllOpen ? 'Collapse All' : 'Expand All'}
             </button>
           </div>
         </div>
@@ -437,7 +437,7 @@ const HomePage = () => {
       {/* ── CTA 2 ── */}
       <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="wa-btn wa-btn-big">
         <WhatsAppIcon size={26} />
-        <span>Join – WhatsApp</span>
+        <span>Join on WhatsApp</span>
       </a>
 
       {/* ── RECORDED LECTURES ── */}
@@ -482,7 +482,7 @@ const HomePage = () => {
       {/* ── FINAL CTA ── */}
       <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="wa-btn wa-btn-big wa-btn-final">
         <WhatsAppIcon size={26} />
-        <span>Join – WhatsApp</span>
+        <span>Join on WhatsApp</span>
       </a>
 
       {/* ── FLOATING WHATSAPP ── */}
