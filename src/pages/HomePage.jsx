@@ -335,7 +335,7 @@ const HomePage = () => {
             <span>📚</span> Complete Trading Mastery Syllabus
           </h2>
           <p className="smc-desc">
-            SMC, ICT, CRT आणि Alchemist मॉडेलची संपूर्ण माहिती – बेसिक पासून 95% ॲक्युरसी स्ट्रॅटेजी पर्यंत सर्व समाविष्ट.
+            SMC, ICT, CRT और Alchemist मॉडल की संपूर्ण जानकारी – बेसिक से लेकर 95% Accuracy स्ट्रेटेजी तक सब कुछ शामिल। SMC में जो-जो सिखाने वाले हैं वो सब नीचे Details में Mention किया गया है।
           </p>
 
           {/* TAB SWITCHER */}
