@@ -279,6 +279,266 @@
   line-height: 1.5;
 }
 
+/* ── SMC SYLLABUS SECTION ── */
+.smc-syllabus-section {
+  border-color: rgba(0, 212, 168, 0.28);
+  background: radial-gradient(circle at 95% 5%, rgba(0, 212, 168, 0.08), transparent 45%), var(--bg-card);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.smc-header-block {
+  margin-bottom: 1.25rem;
+}
+
+.smc-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.75px;
+  text-transform: uppercase;
+  border-radius: 100px;
+  background: rgba(0, 212, 168, 0.12);
+  color: var(--teal);
+  border: 1px solid rgba(0, 212, 168, 0.3);
+  margin-bottom: 0.85rem;
+}
+
+.smc-badge-pill .pill-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--teal);
+  box-shadow: 0 0 8px var(--teal);
+  animation: pulse-dot 1.8s infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.6; }
+}
+
+.smc-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.35;
+}
+
+.smc-desc {
+  color: var(--text2);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin-bottom: 0.95rem;
+}
+
+.smc-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.85rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.smc-count-text {
+  font-size: 0.82rem;
+  color: var(--text3);
+  font-weight: 600;
+}
+
+.smc-toggle-all-btn {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--teal);
+  background: rgba(0, 212, 168, 0.08);
+  border: 1px solid rgba(0, 212, 168, 0.22);
+  padding: 0.35rem 0.85rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.smc-toggle-all-btn:hover {
+  background: rgba(0, 212, 168, 0.18);
+  border-color: rgba(0, 212, 168, 0.4);
+  transform: translateY(-1px);
+}
+
+.smc-modules-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-top: 1rem;
+}
+
+.smc-card {
+  background: rgba(10, 16, 30, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: all 0.25s ease;
+}
+
+.smc-card.active {
+  border-color: rgba(0, 212, 168, 0.3);
+  background: rgba(12, 20, 36, 0.9);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.smc-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.95rem 1.15rem;
+  cursor: pointer;
+  user-select: none;
+  gap: 0.75rem;
+  transition: background 0.2s ease;
+}
+
+.smc-card-header:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.smc-card-header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.smc-num {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  padding: 0.25rem 0.55rem;
+  border-radius: 6px;
+  background: linear-gradient(135deg, rgba(0, 212, 168, 0.15), rgba(245, 158, 11, 0.15));
+  color: var(--teal);
+  border: 1px solid rgba(0, 212, 168, 0.25);
+  flex-shrink: 0;
+}
+
+.smc-module-icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+.smc-title-box {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.smc-module-name {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.smc-module-tagline {
+  font-size: 0.78rem;
+  color: var(--text3);
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+.smc-card-header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-shrink: 0;
+}
+
+.smc-badge-chip {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.22rem 0.6rem;
+  border-radius: 6px;
+  background: rgba(245, 158, 11, 0.12);
+  color: var(--gold);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  white-space: nowrap;
+}
+
+.chevron-icon {
+  color: var(--text3);
+  transition: transform 0.25s ease, color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.chevron-icon.open {
+  transform: rotate(180deg);
+  color: var(--teal);
+}
+
+.smc-card-body {
+  padding: 0.5rem 1.15rem 1.15rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.smc-topic-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.6rem;
+}
+
+.smc-topic-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  padding: 0.6rem 0.75rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 0.88rem;
+  color: var(--text2);
+  line-height: 1.5;
+  transition: all 0.2s ease;
+}
+
+.smc-topic-item:hover {
+  background: rgba(255, 255, 255, 0.045);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: var(--text);
+}
+
+.smc-item-icon {
+  font-size: 1rem;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.smc-item-text {
+  flex: 1;
+}
+
+.smc-bull {
+  border-left: 3px solid #10b981;
+}
+
+.smc-bear {
+  border-left: 3px solid #ef4444;
+}
+
+.smc-topic-special {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.15), rgba(0, 212, 168, 0.1));
+  border: 1px solid rgba(245, 158, 11, 0.45);
+  color: #fff;
+  font-weight: 700;
+  box-shadow: 0 0 16px rgba(245, 158, 11, 0.15);
+}
+
 /* ── RESPONSIVE ── */
 @media (max-width: 768px) {
   .home-page { padding: 1.5rem 1rem 5rem; }
@@ -286,6 +546,8 @@
   .hero-sub { font-size: 0.95rem; }
   .batch-strip { grid-template-columns: 1fr; gap: 0.6rem; }
   .card-section { padding: 1.35rem; border-radius: 14px; }
+  .smc-card-header { padding: 0.85rem 1rem; }
+  .smc-card-body { padding: 0.5rem 1rem 1rem; }
 }
 
 @media (max-width: 480px) {
@@ -300,6 +562,16 @@
   .info-row { flex-direction: column; gap: 0.1rem; }
   .info-value { text-align: left; }
   .batch-chip { padding: 0.75rem 0.9rem; }
+  
+  .smc-title { font-size: 1.15rem; }
+  .smc-badge-chip { display: none; }
+  .smc-card-header { padding: 0.75rem 0.85rem; }
+  .smc-card-body { padding: 0.4rem 0.85rem 0.85rem; }
+  .smc-module-name { font-size: 0.9rem; }
+  .smc-module-tagline { font-size: 0.74rem; }
+  .smc-topic-item { font-size: 0.82rem; padding: 0.5rem 0.65rem; }
+  .smc-toolbar { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+  .smc-toggle-all-btn { width: 100%; text-align: center; }
 }
 
 @media (max-width: 360px) {
@@ -307,3 +579,4 @@
   .sec-heading { font-size: 1rem; }
   .tick-list li, .gem-list li, .sec-body { font-size: 0.88rem; }
 }
+
