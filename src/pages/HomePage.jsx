@@ -284,11 +284,11 @@ const HomePage = () => {
       {/* ── HERO ── */}
       <section className="hero">
         <h1 className="hero-title">
-          Forex Basic ते Advanced
+          Forex Basic से Advanced
           <span className="gradient-text"> – Deep Market Knowledge Masterclass</span>
         </h1>
         <p className="hero-sub">
-          फक्त Buy–Sell Calls वर अवलंबून न राहता स्वतःच्या Analysis आणि Confidence वर ट्रेड करायला शिका
+          सिर्फ Buy–Sell Calls पर निर्भर न रहकर अपने खुद के Analysis और Confidence पर ट्रेड करना सीखें
         </p>
       </section>
 
