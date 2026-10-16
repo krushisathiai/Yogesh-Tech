@@ -250,31 +250,45 @@ const ictModules = [
 ];
 
 const HomePage = () => {
-  const [activeTab, setActiveTab] = useState('smc');
-  const [openModules, setOpenModules] = useState({
-    'smc-1': true, 'smc-2': true, 'smc-3': true, 'smc-4': true, 'smc-5': true, 'smc-6': true,
+  const [openSmcModules, setOpenSmcModules] = useState({
+    'smc-1': true, 'smc-2': true, 'smc-3': true, 'smc-4': true, 'smc-5': true, 'smc-6': true
+  });
+  const [openIctModules, setOpenIctModules] = useState({
     'ict-1': true, 'ict-2': true, 'ict-3': true, 'ict-4': true, 'ict-5': true, 'ict-6': true
   });
+  const [showIctFull, setShowIctFull] = useState(false);
 
-  const toggleModule = (id) => {
-    setOpenModules(prev => ({
+  const toggleSmcModule = (id) => {
+    setOpenSmcModules(prev => ({
       ...prev,
       [id]: !prev[id]
     }));
   };
 
-  const currentModules = activeTab === 'smc' ? smcModules : ictModules;
-  const currentTabOpenCount = currentModules.filter(m => openModules[m.id]).length;
-  const isCurrentAllOpen = currentTabOpenCount === currentModules.length;
+  const isSmcAllOpen = smcModules.every(m => openSmcModules[m.id]);
 
-  const toggleCurrentAll = () => {
-    const targetState = !isCurrentAllOpen;
-    setOpenModules(prev => {
-      const updated = { ...prev };
-      currentModules.forEach(m => {
-        updated[m.id] = targetState;
-      });
-      return updated;
+  const toggleSmcAll = () => {
+    const targetState = !isSmcAllOpen;
+    setOpenSmcModules({
+      'smc-1': targetState, 'smc-2': targetState, 'smc-3': targetState,
+      'smc-4': targetState, 'smc-5': targetState, 'smc-6': targetState
+    });
+  };
+
+  const toggleIctModule = (id) => {
+    setOpenIctModules(prev => ({
+      ...prev,
+      [id]: !prev[id]
+    }));
+  };
+
+  const isIctAllOpen = ictModules.every(m => openIctModules[m.id]);
+
+  const toggleIctAll = () => {
+    const targetState = !isIctAllOpen;
+    setOpenIctModules({
+      'ict-1': targetState, 'ict-2': targetState, 'ict-3': targetState,
+      'ict-4': targetState, 'ict-5': targetState, 'ict-6': targetState
     });
   };
 
@@ -324,67 +338,39 @@ const HomePage = () => {
         </ul>
       </section>
 
-      {/* ── SYLLABUS SECTION WITH TABS ── */}
+      {/* ── 1. SMC COMPLETE SYLLABUS SECTION ── */}
       <section className="card-section smc-syllabus-section glow-section">
         <div className="smc-header-block">
           <div className="smc-badge-pill">
             <span className="pill-dot"></span>
-            COMPLETE MASTERCLASS SYLLABUS
+            ALL CONCEPTS INCLUDED IN SMC
           </div>
           <h2 className="smc-title">
-            <span>📚</span> Complete Trading Mastery Syllabus
+            <span>🧠</span> SMC (Smart Money Concept) – Detailed Syllabus
           </h2>
           <p className="smc-desc">
             SMC, ICT, CRT और Alchemist मॉडल की संपूर्ण जानकारी – बेसिक से लेकर 95% Accuracy स्ट्रेटेजी तक सब कुछ शामिल। SMC में जो-जो सिखाने वाले हैं वो सब नीचे Details में Mention किया गया है।
           </p>
 
-          {/* TAB SWITCHER */}
-          <div className="syllabus-tabs-nav">
-            <button 
-              type="button" 
-              className={`syllabus-tab-btn ${activeTab === 'smc' ? 'active' : ''}`}
-              onClick={() => setActiveTab('smc')}
-            >
-              <span className="tab-icon">🧠</span>
-              <div className="tab-btn-text">
-                <strong>SMC (Smart Money)</strong>
-                <small>6 Modules • All Concepts</small>
-              </div>
-            </button>
-            <button 
-              type="button" 
-              className={`syllabus-tab-btn ${activeTab === 'ict' ? 'active' : ''}`}
-              onClick={() => setActiveTab('ict')}
-            >
-              <span className="tab-icon">🎯</span>
-              <div className="tab-btn-text">
-                <strong>ICT, CRT &amp; Alchemist</strong>
-                <small>6 Modules • IPDA &amp; Time Theory</small>
-              </div>
-            </button>
-          </div>
-
           <div className="smc-toolbar">
-            <span className="smc-count-text">
-              {activeTab === 'smc' ? '🧠 SMC: 6 Core Modules' : '🎯 ICT & CRT: 6 Advanced Modules'}
-            </span>
-            <button type="button" onClick={toggleCurrentAll} className="smc-toggle-all-btn">
-              {isCurrentAllOpen ? 'Collapse All Topics' : (activeTab === 'smc' ? 'Check Smart Money Concept All Topics' : 'Check ICT & CRT All Topics')}
+            <span className="smc-count-text">🧠 SMC: 6 Core Modules</span>
+            <button type="button" onClick={toggleSmcAll} className="smc-toggle-all-btn">
+              {isSmcAllOpen ? 'Collapse All Topics' : 'Check Smart Money Concept All Topics'}
             </button>
           </div>
         </div>
 
         <div className="smc-modules-container">
-          {currentModules.map((mod) => {
-            const isOpen = !!openModules[mod.id];
+          {smcModules.map((mod) => {
+            const isOpen = !!openSmcModules[mod.id];
             return (
               <div key={mod.id} className={`smc-card ${isOpen ? 'active' : ''}`}>
                 <div 
                   className="smc-card-header" 
-                  onClick={() => toggleModule(mod.id)}
+                  onClick={() => toggleSmcModule(mod.id)}
                   role="button"
                   tabIndex={0}
-                  onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') toggleModule(mod.id); }}
+                  onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') toggleSmcModule(mod.id); }}
                 >
                   <div className="smc-card-header-left">
                     <span className="smc-num">{mod.num}</span>
@@ -419,6 +405,116 @@ const HomePage = () => {
             );
           })}
         </div>
+      </section>
+
+      {/* ── 2. SEPARATE ICT, CRT & ALCHEMIST SECTION ── */}
+      <section className="card-section ict-syllabus-section">
+        <div className="smc-header-block">
+          <div className="ict-badge-pill">
+            <span className="pill-dot gold-dot"></span>
+            ADVANCED INSTITUTIONAL MASTERCLASS
+          </div>
+          <h2 className="smc-title">
+            <span>🎯</span> ICT, CRT &amp; Alchemist – Advanced Masterclass
+          </h2>
+          <p className="smc-desc">
+            IPDA Algorithm, Candle Range Theory (CRT), Judas Swing, Time Theory आणि Alchemist Fibonacci मॉडेलची संपूर्ण माहिती.
+          </p>
+
+          {/* PREVIEW CHIPS */}
+          <div className="ict-preview-chips">
+            <span className="ict-preview-chip">🔄 AMD &amp; Price Delivery</span>
+            <span className="ict-preview-chip">🕯️ Candle Delivery &amp; Judas</span>
+            <span className="ict-preview-chip">⚡ IPDA &amp; Profiles</span>
+            <span className="ict-preview-chip">🎯 Kill Zones &amp; Gold Phantom</span>
+            <span className="ict-preview-chip highlight">🏆 CRT 95% Accuracy XAU-USD</span>
+            <span className="ict-preview-chip">✨ Alchemist Fibonacci</span>
+          </div>
+
+          {/* THE SEPARATE CALL-TO-ACTION BUTTON AS REQUESTED */}
+          <div className="ict-cta-box">
+            <button 
+              type="button" 
+              className={`ict-full-btn ${showIctFull ? 'active' : ''}`}
+              onClick={() => setShowIctFull(!showIctFull)}
+            >
+              <div className="ict-btn-left">
+                <span className="ict-btn-icon">⚡</span>
+                <div className="ict-btn-content">
+                  <span className="ict-btn-title">
+                    {showIctFull ? '▲ Close ICT, CRT & Alchemist Syllabus' : '👉 Click Here to Check Full Syllabus'}
+                  </span>
+                  <span className="ict-btn-sub">
+                    {showIctFull 
+                      ? 'Click to collapse ICT, CRT & Alchemist modules' 
+                      : 'Check all 6 Advanced Modules & 45+ Institutional Setups'}
+                  </span>
+                </div>
+              </div>
+              <span className={`ict-btn-chevron ${showIctFull ? 'open' : ''}`}>
+                <ChevronIcon isOpen={showIctFull} />
+              </span>
+            </button>
+          </div>
+
+          {showIctFull && (
+            <div className="smc-toolbar" style={{ marginTop: '1.25rem' }}>
+              <span className="smc-count-text">🎯 ICT &amp; CRT: 6 Advanced Modules</span>
+              <button type="button" onClick={toggleIctAll} className="smc-toggle-all-btn">
+                {isIctAllOpen ? 'Collapse All Topics' : 'Expand All Topics'}
+              </button>
+            </div>
+          )}
+        </div>
+
+        {/* EXPANDABLE MODULES */}
+        {showIctFull && (
+          <div className="smc-modules-container">
+            {ictModules.map((mod) => {
+              const isOpen = !!openIctModules[mod.id];
+              return (
+                <div key={mod.id} className={`smc-card ict-card ${isOpen ? 'active' : ''}`}>
+                  <div 
+                    className="smc-card-header" 
+                    onClick={() => toggleIctModule(mod.id)}
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') toggleIctModule(mod.id); }}
+                  >
+                    <div className="smc-card-header-left">
+                      <span className="smc-num ict-num">{mod.num}</span>
+                      <span className="smc-module-icon">{mod.icon}</span>
+                      <div className="smc-title-box">
+                        <h3 className="smc-module-name">{mod.title}</h3>
+                        <span className="smc-module-tagline">{mod.tagline}</span>
+                      </div>
+                    </div>
+                    <div className="smc-card-header-right">
+                      <span className="smc-badge-chip ict-chip">{mod.badge}</span>
+                      <ChevronIcon isOpen={isOpen} />
+                    </div>
+                  </div>
+
+                  {isOpen && (
+                    <div className="smc-card-body">
+                      <ul className="smc-topic-list">
+                        {mod.topics.map((t, idx) => (
+                          <li 
+                            key={idx} 
+                            className={`smc-topic-item ${t.special ? 'smc-topic-special' : ''} ${t.type ? `smc-${t.type}` : ''}`}
+                          >
+                            <span className="smc-item-icon">{t.icon}</span>
+                            <span className="smc-item-text">{t.text}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        )}
       </section>
 
       {/* ── 80+ SESSIONS ── */}

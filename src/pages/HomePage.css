@@ -338,76 +338,161 @@
   margin-bottom: 0.95rem;
 }
 
-/* ── SYLLABUS TABS ── */
-.syllabus-tabs-nav {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.65rem;
-  margin: 1rem 0 1.15rem;
-  background: rgba(5, 10, 20, 0.65);
-  padding: 0.35rem;
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+/* ── SEPARATE ICT & ALCHEMIST SECTION ── */
+.ict-syllabus-section {
+  border-color: rgba(245, 158, 11, 0.35);
+  background: radial-gradient(circle at 95% 5%, rgba(245, 158, 11, 0.08), transparent 45%), var(--bg-card);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
 }
 
-.syllabus-tab-btn {
-  display: flex;
+.ict-badge-pill {
+  display: inline-flex;
   align-items: center;
-  gap: 0.65rem;
-  padding: 0.75rem 0.95rem;
-  border-radius: 9px;
-  background: transparent;
-  border: 1px solid transparent;
-  text-align: left;
-  cursor: pointer;
-  transition: all 0.25s ease;
-  color: var(--text2);
-}
-
-.syllabus-tab-btn:hover {
-  background: rgba(255, 255, 255, 0.04);
-  color: var(--text);
-}
-
-.syllabus-tab-btn.active {
-  background: linear-gradient(135deg, rgba(0, 212, 168, 0.16), rgba(13, 20, 36, 0.95));
-  border-color: rgba(0, 212, 168, 0.35);
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
-}
-
-.tab-icon {
-  font-size: 1.4rem;
-  flex-shrink: 0;
-}
-
-.tab-btn-text {
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-}
-
-.tab-btn-text strong {
-  font-size: 0.92rem;
+  gap: 0.45rem;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.72rem;
   font-weight: 700;
-  color: var(--text);
-  line-height: 1.25;
+  letter-spacing: 0.75px;
+  text-transform: uppercase;
+  border-radius: 100px;
+  background: rgba(245, 158, 11, 0.12);
+  color: var(--gold);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  margin-bottom: 0.85rem;
 }
 
-.syllabus-tab-btn.active .tab-btn-text strong {
+.gold-dot {
+  background: var(--gold) !important;
+  box-shadow: 0 0 8px var(--gold) !important;
+}
+
+/* ── PREVIEW CHIPS ── */
+.ict-preview-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 1rem 0 1.15rem;
+}
+
+.ict-preview-chip {
+  padding: 0.35rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text2);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: all 0.2s ease;
+}
+
+.ict-preview-chip:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.15);
   color: #fff;
 }
 
-.tab-btn-text small {
-  font-size: 0.72rem;
-  color: var(--text3);
-  margin-top: 2px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+.ict-preview-chip.highlight {
+  background: rgba(245, 158, 11, 0.12);
+  border-color: rgba(245, 158, 11, 0.4);
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.12);
 }
 
-.syllabus-tab-btn.active .tab-btn-text small {
+/* ── DEDICATED ICT CTA BUTTON ── */
+.ict-cta-box {
+  margin: 0.5rem 0 0.5rem;
+}
+
+.ict-full-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1.1rem 1.35rem;
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.18), rgba(0, 212, 168, 0.12));
+  border: 2px solid rgba(245, 158, 11, 0.45);
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 6px 24px rgba(245, 158, 11, 0.15);
+  text-align: left;
+}
+
+.ict-full-btn:hover {
+  transform: translateY(-2px);
+  border-color: rgba(245, 158, 11, 0.85);
+  box-shadow: 0 8px 32px rgba(245, 158, 11, 0.3);
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.25), rgba(0, 212, 168, 0.18));
+}
+
+.ict-full-btn.active {
+  border-color: rgba(0, 212, 168, 0.5);
+  background: linear-gradient(135deg, rgba(0, 212, 168, 0.18), rgba(245, 158, 11, 0.15));
+  box-shadow: 0 6px 24px rgba(0, 212, 168, 0.2);
+}
+
+.ict-btn-left {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex: 1;
+}
+
+.ict-btn-icon {
+  font-size: 1.6rem;
+  flex-shrink: 0;
+}
+
+.ict-btn-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.ict-btn-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.3;
+}
+
+.ict-btn-sub {
+  font-size: 0.78rem;
+  color: var(--gold);
+  margin-top: 0.25rem;
+  font-weight: 500;
+}
+
+.ict-btn-chevron {
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: color 0.2s ease;
+}
+
+.ict-full-btn.active .ict-btn-chevron {
   color: var(--teal);
+}
+
+.ict-card.active {
+  border-color: rgba(245, 158, 11, 0.35);
+}
+
+.ict-num {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(0, 212, 168, 0.15));
+  color: var(--gold);
+  border-color: rgba(245, 158, 11, 0.35);
+}
+
+.ict-chip {
+  background: rgba(0, 212, 168, 0.12);
+  color: var(--teal);
+  border-color: rgba(0, 212, 168, 0.25);
 }
 
 .smc-toolbar {
@@ -637,10 +722,10 @@
   
   .smc-title { font-size: 1.15rem; }
   .smc-badge-chip { display: none; }
-  .syllabus-tabs-nav { grid-template-columns: 1fr; gap: 0.45rem; padding: 0.3rem; }
-  .syllabus-tab-btn { padding: 0.65rem 0.8rem; }
-  .tab-btn-text strong { font-size: 0.88rem; }
-  .tab-btn-text small { font-size: 0.7rem; }
+  .ict-full-btn { padding: 0.9rem 1rem; }
+  .ict-btn-title { font-size: 0.92rem; }
+  .ict-btn-sub { font-size: 0.72rem; }
+  .ict-preview-chip { font-size: 0.72rem; padding: 0.28rem 0.55rem; }
   .smc-card-header { padding: 0.75rem 0.85rem; }
   .smc-card-body { padding: 0.4rem 0.85rem 0.85rem; }
   .smc-module-name { font-size: 0.9rem; }
