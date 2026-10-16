@@ -369,7 +369,7 @@ const HomePage = () => {
               {activeTab === 'smc' ? '🧠 SMC: 6 Core Modules' : '🎯 ICT & CRT: 6 Advanced Modules'}
             </span>
             <button type="button" onClick={toggleCurrentAll} className="smc-toggle-all-btn">
-              {isCurrentAllOpen ? 'Collapse All' : 'Expand All'}
+              {isCurrentAllOpen ? 'Collapse All Topics' : (activeTab === 'smc' ? 'Check Smart Money Concept All Topics' : 'Check ICT & CRT All Topics')}
             </button>
           </div>
         </div>
@@ -443,25 +443,25 @@ const HomePage = () => {
       {/* ── RECORDED LECTURES ── */}
       <section className="card-section">
         <h2 className="sec-heading"><span>🎥</span> Recorded Lectures उपलब्ध</h2>
-        <p className="sec-body muted-text">एखादे Live Lecture Miss झाले तरी काळजी करण्याची गरज नाही.</p>
+        <p className="sec-body muted-text">अगर आपका कोई Live Lecture मिस हो जाए, तो चिंता करने की कोई बात नहीं है।</p>
         <ul className="tick-list">
-          <li>प्रत्येक दिवसाचे Recorded Lecture</li>
-          <li>Telegram Batch Group मध्ये उपलब्ध</li>
-          <li>Revision आणि Backtesting साठी उपयोगी</li>
-          <li>कोणताही Concept पुन्हा पाहण्याची सुविधा</li>
+          <li>हर दिन का Full HD Recorded Lecture</li>
+          <li>Telegram Batch Group में हमेशा उपलब्ध</li>
+          <li>Revision और Backtesting के लिए बेहद उपयोगी</li>
+          <li>कोई भी Concept जितनी बार चाहें उतनी बार देखने की पूरी सुविधा</li>
         </ul>
       </section>
 
       {/* ── WHO IS THIS FOR ── */}
       <section className="card-section">
-        <h2 className="sec-heading"><span>💎</span> ही Batch कोणासाठी आहे?</h2>
-        <p className="sec-body muted-text">ही Batch तुमच्यासाठी आहे, जर तुम्हाला:</p>
+        <h2 className="sec-heading"><span>💎</span> यह Batch किसके लिए है?</h2>
+        <p className="sec-body muted-text">यह Batch आपके लिए बिल्कुल सही है, अगर आप:</p>
         <ul className="gem-list">
-          <li>मार्केटचा पुढचा Move स्वतः Predict करायचा असेल</li>
-          <li>Gold आणि Forex मध्ये Confidence ने ट्रेड करायचा असेल</li>
-          <li>ICT, SMC, CRT आणि Order Flow Deep मध्ये शिकायचे असेल</li>
-          <li>Random Entries बंद करून Proper Setup वर ट्रेड करायचा असेल</li>
-          <li>स्वतःचा Analysis तयार करून Independent Trader बनायचे असेल</li>
+          <li>मार्केट का अगला Move खुद Predict करना चाहते हैं</li>
+          <li>Gold (XAU-USD) और Forex में Confidence के साथ ट्रेड करना चाहते हैं</li>
+          <li>ICT, SMC, CRT और Order Flow को Deep में सीखना चाहते हैं</li>
+          <li>Random Entries बंद करके Proper Setup पर ट्रेड करना चाहते हैं</li>
+          <li>खुद का Analysis तैयार करके एक Independent और Profitable Trader बनना चाहते हैं</li>
         </ul>
       </section>
 
@@ -474,7 +474,7 @@ const HomePage = () => {
           <div className="info-row"><span className="info-label">Mode</span><span className="info-value">Live Online</span></div>
           <div className="info-row"><span className="info-label">Sessions</span><span className="info-value">80+</span></div>
           <div className="info-row"><span className="info-label">Recordings</span><span className="info-value">Telegram Batch Group मध्ये Daily</span></div>
-          <div className="info-row"><span className="info-label">Language</span><span className="info-value">हिंदी + मराठी</span></div>
+          <div className="info-row"><span className="info-label">Language</span><span className="info-value">हिंदी + English + मराठी</span></div>
           <div className="info-row info-row-col"><span className="info-label">Topics</span><span className="info-value topics-val">SMC (6 Modules) | ICT &amp; CRT (6 Modules) | Fibonacci Alchemist | Order Flow | Bookmap | Fundamentals</span></div>
         </div>
       </section>
